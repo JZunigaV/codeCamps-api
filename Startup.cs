@@ -36,12 +36,6 @@ namespace CoreCodeCamp
         //  new HeaderApiVersionReader("X-Version"),
         //  new QueryStringApiVersionReader("ver", "version"));
 
-        opt.Conventions.Controller<TalksController>()
-          .HasApiVersion(new ApiVersion(1, 0))
-          .HasApiVersion(new ApiVersion(1, 1))
-          .Action(c => c.Delete(default(string), default(int)))
-            .MapToApiVersion(1, 1);
-
       });
 
       services.AddMvc(opt => opt.EnableEndpointRouting = false)
